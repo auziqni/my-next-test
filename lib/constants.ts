@@ -18,3 +18,14 @@ export const dashmenu = [
     bgColor: "bg-violet-500/10",
   },
 ];
+
+export const apimenu = [
+  {
+    label: "Google Maps",
+    href: "gmaps",
+  },
+  {
+    label: "lainnya",
+    href: "lainnya",
+  },
+];
