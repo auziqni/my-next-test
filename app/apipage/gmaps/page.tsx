@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+// const {
+//   withScriptjs,
+//   withGoogleMap,
+//   GoogleMap,
+//   Marker,
+//   useJsApiLoader,
+// } = require("react-google-maps");
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "400px",
@@ -8,8 +15,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: -5.361793456080359,
+  lng: 105.22587690565686,
 };
 // const ApiKey : string = process.env.GMAPS_API_KEY ;
 
@@ -30,7 +37,8 @@ export default function page() {
       //   onUnmount={onUnmount}
     >
       {/* Child components, such as markers, info windows, etc. */}
-      <></>
+
+      <Marker position={{ lat: -5.361793456080359, lng: 105.22587690565686 }} />
     </GoogleMap>
   ) : (
     <></>
