@@ -1,7 +1,12 @@
 "use client";
 import React, { useCallback, useMemo, useRef } from "react";
 
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  Circle,
+} from "@react-google-maps/api";
 
 import { listplaces } from "./listPlace";
 import { url } from "inspector";
@@ -11,21 +16,25 @@ const containerStyle = {
   height: "400px",
 };
 
-const home = {
-  lat: -5.361793456080359,
-  lng: 105.22587690565686,
+const office = {
+  lat: -5.361319,
+  lng: 105.226564,
 };
 
 export default function Map() {
   const mapRef = useRef<GoogleMap>();
-  const center = useMemo(() => home, []);
+  const center = useMemo(() => office, []);
   const option = useMemo(
     () => ({ disableDefaultUI: true, clickableIcons: false }),
     []
   );
 
-  // const onload = useCallback((map) =>(mapRef.current=map,[]))
-
+  // todo use callback
+  // const onLoad = useCallback((map) => (mapRef.current = map), []);
+  const iconoffice = {
+    url: "/images/office.png",
+    scaledSize: new google.maps.Size(50, 50),
+  };
   const iconmale = {
     url: "/images/place_male.png",
     scaledSize: new google.maps.Size(50, 50),
@@ -39,21 +48,55 @@ export default function Map() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={20}
         options={option}
         //   onLoad={onLoad}
         //   onUnmount={onUnmount}
       >
-        {/* Child components, such as markers, info windows, etc. */}
-
-        <div></div>
+        <Marker position={office} icon={iconoffice} />
         {listplaces.map((listplace) => (
-          <Marker
-            position={{ lat: listplace.lat, lng: listplace.lng }}
-            icon={listplace.male ? iconmale : iconfemale}
-          />
+          <div className=" bg-black w">
+            <Marker
+              position={{ lat: listplace.lat, lng: listplace.lng }}
+              icon={listplace.male ? iconmale : iconfemale}
+            />
+          </div>
         ))}
+
+        <Circle center={office} radius={200} options={closeOptions} />
+        <Circle center={office} radius={400} options={middleOptions} />
+        <Circle center={office} radius={650} options={farOptions} />
       </GoogleMap>
     </div>
   );
 }
+
+const defaultOptions = {
+  strokeOpacity: 0.5,
+  strokeWeight: 2,
+  clickable: false,
+  draggable: false,
+  editable: false,
+  visible: true,
+};
+const closeOptions = {
+  ...defaultOptions,
+  zIndex: 3,
+  fillOpacity: 0.05,
+  strokeColor: "#8BC34A",
+  fillColor: "#8BC34A",
+};
+const middleOptions = {
+  ...defaultOptions,
+  zIndex: 2,
+  fillOpacity: 0.05,
+  strokeColor: "#FBC02D",
+  fillColor: "#FBC02D",
+};
+const farOptions = {
+  ...defaultOptions,
+  zIndex: 1,
+  fillOpacity: 0.05,
+  strokeColor: "#FF5252",
+  fillColor: "#FF5252",
+};
