@@ -4,10 +4,11 @@ import React, { useCallback, useMemo, useRef } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 import { listplaces } from "./listPlace";
+import { url } from "inspector";
 
 const containerStyle = {
   width: "100%",
-  height: "500px",
+  height: "400px",
 };
 
 const home = {
@@ -23,7 +24,16 @@ export default function Map() {
     []
   );
 
-  //   const onload = useCallback((map) =>(mapRef.current=map,[]))
+  // const onload = useCallback((map) =>(mapRef.current=map,[]))
+
+  const iconmale = {
+    url: "/images/place_male.png",
+    scaledSize: new google.maps.Size(50, 50),
+  };
+  const iconfemale = {
+    url: "/images/place_female.png",
+    scaledSize: new google.maps.Size(50, 50),
+  };
   return (
     <div>
       <GoogleMap
@@ -38,7 +48,10 @@ export default function Map() {
 
         <div></div>
         {listplaces.map((listplace) => (
-          <Marker position={{ lat: listplace.lat, lng: listplace.lng }} />
+          <Marker
+            position={{ lat: listplace.lat, lng: listplace.lng }}
+            icon={listplace.male ? iconmale : iconfemale}
+          />
         ))}
       </GoogleMap>
     </div>
