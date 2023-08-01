@@ -1,7 +1,7 @@
 import React from "react";
 import { csmenu } from "@/lib/constants";
 
-export default function page() {
+export default function CsMenu() {
   return (
     <main className="">
       <ul>
