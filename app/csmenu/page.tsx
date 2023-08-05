@@ -11,9 +11,6 @@ export default function CsMenu() {
               <li key={menu.label}>
                 <a href={"/csmenu/" + menu.href}>{menu.label}</a>
               </li>
-              <li key={menu.label}>
-                <a href={"/csmenu/" + menu.href}>{menu.label}</a>
-              </li>
             </main>
           );
         })}
