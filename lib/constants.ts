@@ -40,5 +40,6 @@ export const shadcn = [{ id: 1, label: "combobox", href: "combobo" }];
 
 export const apimenu = [
   { id: 1, label: "Google Maps", href: "gmaps" },
-  { id: 2, label: "lainnya", href: "lainnya" },
+  { id: 2, label: "Planet Scale", href: "planetscale" },
+  { id: 99, label: "lainnya", href: "lainnya" },
 ];
