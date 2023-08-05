@@ -4,7 +4,7 @@ import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 import Map from "./components/maps";
 
-export default function page() {
+export default function Gmaps() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     // libraries: ["places"],

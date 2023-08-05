@@ -6,8 +6,8 @@ export default function page() {
       <ul>
         {apimenu.map(function (menu) {
           return (
-            <main className="p-5">
-              <li key={menu.label}>
+            <main key={menu.label} className="p-5">
+              <li>
                 <a href={"/apipage/" + menu.href}>{menu.label}</a>
               </li>
             </main>
