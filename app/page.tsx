@@ -9,8 +9,8 @@ export default function Home() {
       <ul>
         {dashmenu.map(function (menu) {
           return (
-            <main className="p-5">
-              <li key={menu.label}>
+            <main key={menu.id} className="p-5">
+              <li>
                 <a href={"/" + menu.href}>{menu.label}</a>
               </li>
             </main>

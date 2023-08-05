@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 
-export default function page() {
+export default function Toast() {
   const { toast } = useToast();
   const onToast = () => {
     toast({
