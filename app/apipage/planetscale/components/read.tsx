@@ -1,3 +1,4 @@
+// "use client";
 import React, { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 
@@ -19,12 +20,12 @@ const getProduct = async () => {
 
 export default async function ReadPlanet() {
   const paraorang = await getProduct();
-  const [orangs, setorangs] = useState(paraorang);
+  // const [orangs, setorangs] = useState(paraorang);
   return (
     <main>
       <h1 className=" text-lg"> ini semua</h1>
       <div className="grid grid-cols-4 gap-10">
-        {orangs.map((orang) => (
+        {paraorang.map((orang) => (
           <div key={orang.Id} className=" bg-sky-200 ">
             <h1 className="font-bold">
               {orang.Id} <span>{orang.Nama}</span>
