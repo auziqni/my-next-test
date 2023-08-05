@@ -25,6 +25,10 @@ export const csmenu = [
     href: "shadcn",
   },
   {
+    label: "Material",
+    href: "materialui",
+  },
+  {
     label: "lainnya",
     href: "lainnya",
   },
