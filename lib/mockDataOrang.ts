@@ -1,5 +1,6 @@
-const DataOrang: Orang[] = [
+export const DataOrang: Orang[] = [
   {
+    id: 1,
     Nama: "John Doe",
     Ismale: true,
     Umur: 30,
@@ -7,6 +8,7 @@ const DataOrang: Orang[] = [
     Berat: 75,
   },
   {
+    id: 2,
     Nama: "Jane Smith",
     Ismale: false,
     Umur: 25,
@@ -15,6 +17,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 3,
     Nama: "Michael Johnson",
     Ismale: true,
     Umur: 40,
@@ -23,6 +26,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 4,
     Nama: "Emily Wang",
     Ismale: false,
     Umur: 28,
@@ -31,6 +35,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 5,
     Nama: "William Lee",
     Ismale: true,
     Umur: 35,
@@ -39,6 +44,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 6,
     Nama: "Jessica Tan",
     Ismale: false,
     Umur: 32,
@@ -47,6 +53,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 7,
     Nama: "Robert Kim",
     Ismale: true,
     Umur: 45,
@@ -55,6 +62,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 8,
     Nama: "Olivia Park",
     Ismale: false,
     Umur: 29,
@@ -63,6 +71,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 9,
     Nama: "Benjamin Chen",
     Ismale: true,
     Umur: 31,
@@ -71,6 +80,7 @@ const DataOrang: Orang[] = [
   },
 
   {
+    id: 10,
     Nama: "Sophia Garcia",
     Ismale: false,
     Umur: 27,

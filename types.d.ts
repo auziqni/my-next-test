@@ -1,4 +1,5 @@
 type Orang = {
+  id: number;
   Nama: string;
   Ismale: boolean;
   Umur: number;
