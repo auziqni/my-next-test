@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model DataOrang{
+  Id Int @id @default(autoincrement())
+  Nama String
+  Ismale Boolean
+  Umur Int
+  Alamat String
+    Berat Int
+}
+

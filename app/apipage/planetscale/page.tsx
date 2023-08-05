@@ -1,5 +1,10 @@
 import React from "react";
+import ReadPlanet from "./components/read";
 
-export default function PlanetScale() {
-  return <div> PlanetScale </div>;
+export default async function PlanetScale() {
+  return (
+    <main>
+      <ReadPlanet />
+    </main>
+  );
 }
