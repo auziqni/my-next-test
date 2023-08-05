@@ -1,7 +1,4 @@
-import Link from "next/link";
-
 import { dashmenu } from "@/lib/constants";
-import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
