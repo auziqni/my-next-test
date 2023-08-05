@@ -23,6 +23,9 @@ const office = {
 
 export default function Map() {
   const mapRef = useRef<GoogleMap>();
+  const onMapLoad = useCallback((map: any) => {
+    mapRef.current = map;
+  }, []);
   const center = useMemo(() => office, []);
   const option = useMemo(
     () => ({ disableDefaultUI: true, clickableIcons: false }),
@@ -50,17 +53,16 @@ export default function Map() {
         center={center}
         zoom={20}
         options={option}
-        //   onLoad={onLoad}
+        onLoad={onMapLoad}
         //   onUnmount={onUnmount}
       >
         <Marker position={office} icon={iconoffice} />
         {listplaces.map((listplace) => (
-          <div className=" bg-black w">
-            <Marker
-              position={{ lat: listplace.lat, lng: listplace.lng }}
-              icon={listplace.male ? iconmale : iconfemale}
-            />
-          </div>
+          <Marker
+            key={listplace.id}
+            position={{ lat: listplace.lat, lng: listplace.lng }}
+            icon={listplace.male ? iconmale : iconfemale}
+          />
         ))}
 
         <Circle center={office} radius={200} options={closeOptions} />

@@ -13,10 +13,10 @@ export default function page() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GMAPS_API_KEY!,
   });
   return isLoaded ? (
-    <div>
+    <main>
       <Map />
-    </div>
+    </main>
   ) : (
-    <div>loading. . .</div>
+    <main>loading. . .</main>
   );
 }
